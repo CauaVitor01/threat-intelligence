@@ -1,0 +1,50 @@
+# Adversary Emulation & Defense Automation Framework
+
+![MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-red)
+![Purple Team](https://img.shields.io/badge/Role-Purple%20Team-purple)
+
+##  Visão Geral do Projeto
+
+Este repositório apresenta uma documentação técnica detalhada sobre **Engenharia de Emulação** e **Operações de Purple Team**, utilizando a plataforma **MITRE CALDERA**. O projeto simula o ciclo completo de um ataque persistente (baseado no grupo **APT41**) e valida mecanismos de detecção e resposta automática.
+
+> 📂 **A documentação completa, incluindo prints de tela, análises de logs e respostas técnicas, está disponível no arquivo: [framework_caldera.pdf](./framework_caldera.pdf)**
+
+---
+
+## O que este projeto demonstra?
+
+A documentação contida no PDF cobre cinco pilares fundamentais da cibersegurança moderna:
+
+### 1. Emulação de Adversário (Red Team)
+* Configuração de servidor C2 e agentes persistentes.
+* Técnicas de **Masquerading** (camuflagem de agentes como processos legítimos).
+* Execução de TTPs ofuscadas para bypass de monitoramento básico.
+
+### 2. Observabilidade e Detecção (Blue Team)
+* Análise de telemetria via **Sysmon** e **Aurora EDR**.
+* Validação de **Regras Sigma** para detecção de persistência, criação de usuários e execução de comandos WMI.
+
+### 3. Resposta a Incidentes (IR) Automatizada
+* Implementação de defesas ativas que reagem em tempo real a Indicadores de Comprometimento (IoCs).
+* Automação de bloqueio de firewall e terminação de processos maliciosos sem intervenção humana.
+
+### 4. Estudo de Caso: APT41 (Double Dragon)
+* Simulação de uma cadeia de ataque realística, incluindo a técnica de limpeza de logs (**T1070.001**) e persistência via Winlogon (**T1547.004**).
+
+---
+
+## Destaques Técnicos do framework_caldera.pdf
+
+Dentro do PDF, você encontrará a análise das seguintes questões críticas:
+* **Identificação de IoCs:** Como rastrear o payload original após uma execução via Tarefa Agendada.
+* **Análise de Evasão:** Detecção do utilitário `wevtutil` sendo usado para destruir evidências forenses.
+* **Lógica de Defesa:** O uso de **Fatos e Fontes** para desbloquear habilidades de defesa de forma condicional.
+
+---
+
+## Resultados Alcançados
+
+* **Validação de Defesa:** Redução do *Dwell Time* através de respostas automáticas configuradas no plugin de Response.
+* **Higiene de Ativos:** Demonstração de como separar tráfego de agentes vermelhos e azuis em um exercício de simulação.
+* **Domínio de Framework:** Uso prático do MITRE ATT&CK para mapear e mitigar riscos em endpoints Windows.
+
