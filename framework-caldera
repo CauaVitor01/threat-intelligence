@@ -7,7 +7,7 @@
 
 Este repositório apresenta uma documentação técnica detalhada sobre **Engenharia de Emulação** e **Operações de Purple Team**, utilizando a plataforma **MITRE CALDERA**. O projeto simula o ciclo completo de um ataque persistente (baseado no grupo **APT41**) e valida mecanismos de detecção e resposta automática.
 
-> 📂 **A documentação completa, incluindo prints de tela, análises de logs e respostas técnicas, está disponível no arquivo: [framework_caldera.pdf](./framework_caldera.pdf)**
+> 📂 **A documentação completa, incluindo prints de tela, análises de logs e respostas técnicas, está disponível no arquivo: [framework_caldera.pdf]
 
 ---
 
