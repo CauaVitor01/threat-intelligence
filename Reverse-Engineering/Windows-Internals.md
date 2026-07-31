@@ -37,4 +37,21 @@ As DLLs representam o motor modular do ecossistema Windows e são amplamente abu
 
 ---
 
-## 4.
+## 4. Anatomia de uma Injeção de Código
+
+Documentação do fluxo de chamadas a APIs nativas do Windows utilizadas sistematicamente para manipulação de memória remota:
+
+1. **`OpenProcess`:** Ganhar um *handle* com permissões adequadas de acesso ao processo alvo.
+2. **`VirtualAllocEx`:** Alocar espaço de memória dentro do processo alvo, preferencialmente com permissões de Leitura, Gravação e Execução (RWX).
+3. **`WriteProcessMemory`:** Escrever o payload ou shellcode malicioso no espaço recém-alocado.
+4. **`CreateRemoteThread`:** Instruir o processo alvo a iniciar uma nova thread para executar o código injetado.
+
+> **Insight Operacional:** A detecção sequencial dessa cadeia exata de chamadas de API é um indicador crítico e de alta fidelidade para comportamento malicioso, classificado na técnica T1055 do MITRE ATT&CK (Process Injection).
+
+---
+
+## 5. Ferramentas Utilizadas
+
+* **Process Hacker 2 / Process Explorer:** Visibilidade detalhada e monitoramento em tempo real de processos, threads e handles.
+* **Procmon (Process Monitor):** Telemetria profunda de eventos de sistema, registro e sistema de arquivos.
+* **x64dbg / PE-bear:** Ferramentas dedicadas para análise estrutural de cabeçalhos PE e depuração de código em nível de assembly.
